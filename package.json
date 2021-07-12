@@ -1,0 +1,23 @@
+{
+  "name": "teamprofilegenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janayAl/teamprofilegenerator.git"
+  },
+  "keywords": [],
+  "author": "JanayAllen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janayAl/teamprofilegenerator/issues"
+  },
+  "homepage": "https://github.com/janayAl/teamprofilegenerator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  }
+}
