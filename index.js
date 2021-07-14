@@ -9,7 +9,7 @@ inquirer
       message: 'What is your name?',
     },
     {
-      type: 'checkbox',
+      type: 'input',
       message: 'What is your email address?',
       name: 'email',
       
@@ -19,6 +19,16 @@ inquirer
       message: 'What is your role?',
       name: 'contact',
       choices: ['Manager', 'Engineer', 'Intern'],
+    },
+    {
+      type: 'input',
+      name: 'Github',
+      message: 'What is your Github username?',
+    },
+    {
+      type: 'input',
+      name: 'school',
+      message: 'What is your School?',
     },
   ])
 //   .then((data) => {
