@@ -64,15 +64,28 @@ function menu() {
       choices: ["Engineer", "Intern", "I'm done"]
     }
   ]).then(answers => {
-    if(answers.choice == "Engineer"){
-      //run engineer function
-    } else{
+    console.log(answers)
+    const htmlPageContent = generateHTML(answers);
+fs.writeFile('index.html', htmlPageContent, (err) =>
+err ? console.log(err) : console.log('Successfully created html file')
+);
+});
+
+    // if(answers.choice == "Engineer"){
+      
+    //   }
+
+        
+    //   }
+    
+    //   //run engineer function
+    // } else{
       //run HTML create function
       //using that array
       fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
     }
-  })
-}
+  // })
+// }
 
 //   .then((data) => {
 //     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
@@ -116,13 +129,4 @@ console.log(arr[0].getRole())
       </html>`;
       
     }
-  // }
-// Bonus using writeFileAsync as a promise
-// const init = () => {
-//   promptUser()
-//     .then((answers) => writeFileAsync('index.html', generateHTML(answers)))
-//     .then(() => console.log('Successfully wrote to index.html'))
-//     .catch((err) => console.error(err));
-// };
-
-// init();
+ 
