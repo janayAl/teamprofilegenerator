@@ -10,3 +10,4 @@ describe("Employee", () => {
 
     it("should return Employee as a role", () => {
       const obj = new Employee("Janay", 0, "nunnya@test.com")
+});
