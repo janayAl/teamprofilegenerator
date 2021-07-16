@@ -4,7 +4,7 @@ describe("Employee", () => {
   describe("Initialization", () => {
     it("should create a new Employee Class", () => {
       const obj = new Employee("Janay", 0, "nunnya@test.com");
-
+    
       expect(obj instanceof Employee).toEqual(true);
     });
 
@@ -12,6 +12,5 @@ describe("Employee", () => {
       const obj = new Employee("Janay", 0, "nunnya@test.com");
     });
 
-     
     
-    
+
