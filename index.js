@@ -149,7 +149,7 @@ function addIntern(){
     },
   ]).then(answer => {
     // console.log(answer)
-    //do something with information about manager
+    //do something with information about intern 
     const newIntern =  new Intern(answer.internName, answer.internId, answer.internEmail, answer.internGithub)
     console.log(newIntern)
     arrOfEmp.push(newIntern);
@@ -157,28 +157,27 @@ function addIntern(){
     menu();
   })
   }
-}
 
-    console.log(answers)
-    const htmlPageContent = generateHTML(answers);
-fs.writeFile('index.html', htmlPageContent, (err) =>
-err ? console.log(err) : console.log('Successfully created html file')
-);
-});
-
-    // if(answers.choice == "Engineer"){
-      
-    //   }
-
-        
-    //   }
+    // const htmlPageContent = generateHTML(answers);
     
-    //   //run engineer function
-    // } else{
+    const writeFile = data => {
+fs.writeFile('./dist/index.html', data, err => {
+  if (err){
+    console.log(err);
+    return;
+  }else {
+console.log('Successfully created html file')
+    }
+  })
+};
+
+
+  
+ 
       //run HTML create function
       //using that array
-      fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
-    }
+    //   fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
+    // }
   // })
 // }
 
