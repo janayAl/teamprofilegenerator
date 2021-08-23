@@ -1,9 +1,17 @@
+//require the modules for prompts and writing
 const inquirer = require('inquirer');
 const fs = require('fs');
-const Manager = require('./lib/Manager');
 
-const arrOfEmp = [];
-inquirer
+//import all of the tables
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+// generate html 
+const generateHTML = require('./src/generateHTML.js')
+
+const arrOfEmp = []; //empty array of the teams
+
+inquirer  
   .prompt([
     {
       type: 'input',
