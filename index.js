@@ -13,8 +13,29 @@ const arrOfEmp = []; //empty array of the teams
 
 //first set of prompts to enter team manager's name, 
 // employee ID, email, office number//
+function menu() {
+  inquirer.prompt([
+    {
+      message: "Please choose an option to build team",
+      name: "choice",
+      type: "list",
+      choices: ["Engineer", "Intern", "Finish building team"]
+    }
+  ]).then(answer => {  //call the engineer function prompts if chosen
+    switch(answer.addEmployee){
+      case "Engineer":
+        addEngineer();
+        break;
+        case "Intern":
+          addIntern();
+          break;
+          case "Finish building team":
+          generateHTML();
+          break;
+    }
 
-const whoManager =() => {
+
+const addManager =() => {
   return inquirer.prompt([
     {
       type: 'input',
@@ -41,42 +62,103 @@ const whoManager =() => {
       name: 'officeNumber',
       message: 'What is your office number',
     },
-    // {
-    //   type: 'list',
-    //   message: 'What is your role?',
-    //   name: 'contact',
-    //   choices: ['Manager', 'Engineer', 'Intern'],
-    // },
-    // {
-    //   type: 'input',
-    //   name: 'Github',
-    //   message: 'What is your Github username?',
-    // },
-    // {
-    //   type: 'input',
-    //   name: 'school',
-    //   message: 'What is your School?',
-    // },
   ]).then(answer => {
     // console.log(answer)
     //do something with information about manager
     const newManager =  new Manager(answer.name, answer.id, answer.email, answer.office)
     console.log(newManager)
-    console.log(newManager.getRole())
-    arrOfEmp.push(newManager)
+    // console.log(newManager.getRole())
+    arrOfEmp.push(newManager);
+    console.log(newManager);
     //call the main menu function
-    menu()
+    // menu()
   })
+}
+addManager(); //calls the addmanager function to start the prompts
 
-function menu() {
-  inquirer.prompt([
+// new menu function with prompts for add engineer, or intern, 
+//or finish building team//
+// const newMenu() {
+// }
+
+//add engineer info
+addEngineer = () => {
+return inquirer.prompt ([
+{
+  type: 'input',
+  name: 'engineerName',
+  message: 'Enter your name'
+},
+{
+  type: 'input',
+  name: 'engineerId',
+  message: 'Enter your id'
+},
+{
+  type: 'input',
+  name: 'engineerEmail',
+  message: 'Enter your Email address'
+},
+
+
+{
+  type: 'input',
+  name: 'engineerGithub',
+  message: 'What is your Github username?',
+},
+]).then(answer => {
+  // console.log(answer)
+  //do something with information about manager
+  const newEngineer =  new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub)
+  console.log(newEngineer)
+  arrOfEmp.push(newEngineer);
+  console.log(newEngineer);
+  menu();
+})
+}
+
+
+//genereate intern function prompts
+function addIntern(){
+  inwuirer.prompt([
     {
-      message: "would you like to add more employees?",
-      name: "choice",
-      type: "list",
-      choices: ["Engineer", "Intern", "I'm done"]
-    }
-  ]).then(answers => {
+      type: 'input',
+      name: 'internName',
+      message: 'Enter your name'
+    },
+    {
+      type: 'input',
+      name: 'internId',
+      message: 'Enter your id'
+    },
+    {
+      type: 'input',
+      name: 'internEmail',
+      message: 'Enter your Email address'
+    },
+    
+    {
+      type: 'input',
+      name: 'internGithub',
+      message: 'What is your Github username?',
+    },
+    {
+      type: 'input',
+      name: 'school',
+      message: 'What is your School?',
+    },
+  ]).then(answer => {
+    // console.log(answer)
+    //do something with information about manager
+    const newIntern =  new Intern(answer.internName, answer.internId, answer.internEmail, answer.internGithub)
+    console.log(newIntern)
+    arrOfEmp.push(newIntern);
+    console.log(newIntern);
+    menu();
+  })
+  }
+}
+
     console.log(answers)
     const htmlPageContent = generateHTML(answers);
 fs.writeFile('index.html', htmlPageContent, (err) =>
