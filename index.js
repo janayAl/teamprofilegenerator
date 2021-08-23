@@ -11,30 +11,35 @@ const generateHTML = require('./src/generateHTML.js')
 
 const arrOfEmp = []; //empty array of the teams
 
-inquirer  
-  .prompt([
+//first set of prompts to enter team manager's name, 
+// employee ID, email, office number//
+
+const whoManager =() => {
+  return inquirer.prompt([
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?',
+      message: 'Who is the manager of this team?',
     },
+
     {
       type: 'input',
-      message: 'What is your email address?',
-      name: 'email',
-      
-    },
-    {
-      type: 'input',
-      message: 'What is your employee ID',
       name: 'id',
-      
+      message: 'Enter the id'
     },
+
     {
       type: 'input',
-      message: 'What is your office number',
-      name: 'office',
+      name: 'email',
+      message: 'Enter the email address',
       
+      
+    },
+  
+    {
+      type: 'input',
+      name: 'officeNumber',
+      message: 'What is your office number',
     },
     // {
     //   type: 'list',
