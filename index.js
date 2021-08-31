@@ -22,20 +22,22 @@ function menu() {
       choices: ["Engineer", "Intern", "Finish building team"]
     }
   ]).then(answer => {  //call the engineer function prompts if chosen
-    switch(answer.addEmployee){
+    switch (answer.addEmployee) {
       case "Engineer":
         addEngineer();
         break;
-        case "Intern":
-          addIntern();
-          break;
-          case "Finish building team":
-          generateHTML();
-          break;
+      case "Intern":
+        addIntern();
+        break;
+      case "Finish building team":
+        generateHTML();
+        break;
+
     }
+  })
+}
 
-
-const addManager =() => {
+const addManager = () => {
   return inquirer.prompt([
     {
       type: 'input',
@@ -53,10 +55,10 @@ const addManager =() => {
       type: 'input',
       name: 'email',
       message: 'Enter the email address',
-      
-      
+
+
     },
-  
+
     {
       type: 'input',
       name: 'officeNumber',
@@ -65,7 +67,7 @@ const addManager =() => {
   ]).then(answer => {
     // console.log(answer)
     //do something with information about manager
-    const newManager =  new Manager(answer.name, answer.id, answer.email, answer.office)
+    const newManager = new Manager(answer.name, answer.id, answer.email, answer.office)
     console.log(newManager)
     // console.log(newManager.getRole())
     arrOfEmp.push(newManager);
@@ -82,44 +84,44 @@ addManager(); //calls the addmanager function to start the prompts
 // }
 
 //add engineer info
-addEngineer = () => {
-return inquirer.prompt ([
-{
-  type: 'input',
-  name: 'engineerName',
-  message: 'Enter your name'
-},
-{
-  type: 'input',
-  name: 'engineerId',
-  message: 'Enter your id'
-},
-{
-  type: 'input',
-  name: 'engineerEmail',
-  message: 'Enter your Email address'
-},
+const addEngineer = () => {
+  return inquirer.prompt([
+    {
+      type: 'input',
+      name: 'engineerName',
+      message: 'Enter your name'
+    },
+    {
+      type: 'input',
+      name: 'engineerId',
+      message: 'Enter your id'
+    },
+    {
+      type: 'input',
+      name: 'engineerEmail',
+      message: 'Enter your Email address'
+    },
 
 
-{
-  type: 'input',
-  name: 'engineerGithub',
-  message: 'What is your Github username?',
-},
-]).then(answer => {
-  // console.log(answer)
-  //do something with information about manager
-  const newEngineer =  new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub)
-  console.log(newEngineer)
-  arrOfEmp.push(newEngineer);
-  console.log(newEngineer);
-  menu();
-})
+    {
+      type: 'input',
+      name: 'engineerGithub',
+      message: 'What is your Github username?',
+    },
+  ]).then(answer => {
+    // console.log(answer)
+    //do something with information about manager
+    const newEngineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub)
+    console.log(newEngineer)
+    arrOfEmp.push(newEngineer);
+    console.log(newEngineer);
+    menu();
+  })
 }
 
 
 //genereate intern function prompts
-function addIntern(){
+function addIntern() {
   inwuirer.prompt([
     {
       type: 'input',
@@ -136,7 +138,7 @@ function addIntern(){
       name: 'internEmail',
       message: 'Enter your Email address'
     },
-    
+
     {
       type: 'input',
       name: 'internGithub',
@@ -150,30 +152,30 @@ function addIntern(){
   ]).then(answer => {
     // console.log(answer)
     //do something with information about intern 
-    const newIntern =  new Intern(answer.internName, answer.internId, answer.internEmail, answer.internGithub)
+    const newIntern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internGithub)
     console.log(newIntern)
     arrOfEmp.push(newIntern);
     console.log(newIntern);
     menu();
   })
-  }
+}
 
-    // const htmlPageContent = generateHTML(answers);
-    
-    const writeFile = data => {
-fs.writeFile('./dist/index.html', data, err => {
-  if (err){
-    console.log(err);
-    return;
-  }else {
-console.log('Successfully created html file')
+// const htmlPageContent = generateHTML(answers);
+
+const writeFile = data => {
+  fs.writeFile('./dist/index.html', data, err => {
+    if (err) {
+      console.log(err);
+      return;
+    } else {
+      console.log('Successfully created html file')
     }
   })
 };
 
 
-  
- 
+
+
       //run HTML create function
       //using that array
     //   fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
