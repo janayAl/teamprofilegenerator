@@ -21,20 +21,20 @@ const menu = () => {
       type: "list",
       choices: ["Engineer", "Intern", "Finish building team"]
     }
-  ]).then((answer) => {  //call the engineer function prompts if chosen
-    switch (answer.addEmployee) {
-      case "Engineer":
-        addEngineer();
-        break;
-      case "Intern":
-        addIntern();
-        break;
-      case "Finish building team":
-        generateHTML();
-        break;
+  ]).then(answer) => {  //call the engineer function prompts if chosen
+  switch (answer.addEmployee) {
+    case "Engineer":
+      addEngineer();
+      break;
+    case "Intern":
+      addIntern();
+      break;
+    case "Finish building team":
+      generateHTML();
+      break;
 
-    }
-  })
+  }
+}
 }
 menu();
 
@@ -65,10 +65,10 @@ const addManager = () => {
       name: 'officeNumber',
       message: 'What is your office number',
     },
-  ]).then(answer => {
+  ]).then(manageranswer => {
     // console.log(answer)
     //do something with information about manager
-    const newManager = new Manager(answer.name, answer.id, answer.email, answer.office)
+    const newManager = new Manager(manageranswer.name, manageranswer.id, manageranswer.email, manageranswer.office)
     console.log(newManager)
     // console.log(newManager.getRole())
     arrOfEmp.push(newManager);
