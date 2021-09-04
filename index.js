@@ -13,7 +13,7 @@ const arrOfEmp = []; //empty array of the teams
 
 //first set of prompts to enter team manager's name, 
 // employee ID, email, office number//
-function menu() {
+const menu = () => {
   inquirer.prompt([
     {
       message: "Please choose an option to build team",
@@ -21,7 +21,7 @@ function menu() {
       type: "list",
       choices: ["Engineer", "Intern", "Finish building team"]
     }
-  ]).then(answer => {  //call the engineer function prompts if chosen
+  ]).then((answer) => {  //call the engineer function prompts if chosen
     switch (answer.addEmployee) {
       case "Engineer":
         addEngineer();
@@ -122,7 +122,7 @@ const addEngineer = () => {
 
 
 //genereate intern function prompts
-function addIntern() {
+const addIntern = () => {
   inquirer.prompt([
     {
       type: 'input',
@@ -161,33 +161,34 @@ function addIntern() {
   })
 }
 
-// const htmlPageContent = generateHTML(answers);
-
-const writeFile = data => {
-  fs.writeFile('./dist/index.html', data, err => {
-    if (err) {
-      console.log(err);
-      return;
-    } else {
-      console.log('Successfully created html file')
-    }
-  })
-};
-
-
-
-
-      //run HTML create function
-      //using that array
-    //   fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
-    // }
-  // })
+// generateContent() {
+//   const htmlPageContent = generateHTML(answers);
+//   //       run HTML create function
+//   //       using that array
+//   fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
 // }
 
+// generatePage(){
 //   .then((data) => {
-//     const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+//   const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
 
 //     );
+
+
+// const writeFile = data => {
+//   fs.writeFile('./dist/index.html', data, err => {
+//     if (err) {
+//       console.log(err);
+//       return;
+//     } else {
+//       console.log('Successfully created html file')
+//     }
+//   })
+// };
+
+
+
+
 //   });
 
 
