@@ -43,7 +43,7 @@ function menu() {
 
 menu();
 
-const addManager = () => {
+function addManager(manager) {
   return inquirer.prompt([
     {
       type: 'input',
@@ -90,7 +90,7 @@ addManager(); //calls the addmanager function to start the prompts
 // }
 
 //add engineer info
-const addEngineer = () => {
+funcion  addEngineer(engineer) {
   return inquirer.prompt([
     {
       type: 'input',
@@ -127,7 +127,7 @@ const addEngineer = () => {
 
 
 //genereate intern function prompts
-const addIntern = () => {
+function addIntern(intern) {
   inquirer.prompt([
     {
       type: 'input',
