@@ -70,10 +70,10 @@ const addManager = () => {
       name: 'officeNumber',
       message: 'What is your office number',
     },
-  ]).then(manageranswer => {
+  ]).then(managerAnswer => {
     // console.log(answer)
     //do something with information about manager
-    const newManager = new Manager(manageranswer.name, manageranswer.id, manageranswer.email, manageranswer.office)
+    const newManager = new Manager(managerAnswer.name, managerAnswer.id, managerAnswer.email, managerAnswer.office)
     console.log(newManager)
     // console.log(newManager.getRole())
     arrOfEmp.push(newManager);
@@ -114,10 +114,10 @@ const addEngineer = () => {
       name: 'engineerGithub',
       message: 'What is your Github username?',
     },
-  ]).then(answer => {
+  ]).then(engineerAnswer => {
     // console.log(answer)
     //do something with information about manager
-    const newEngineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub)
+    const newEngineer = new Engineer(EngineerAnswer.engineerName, EngineerAnswer.engineerId, engineerAnswer.engineerEmail, engineerAnswer.engineerGithub)
     console.log(newEngineer)
     arrOfEmp.push(newEngineer);
     console.log(newEngineer);
@@ -155,10 +155,10 @@ const addIntern = () => {
       name: 'school',
       message: 'What is your School?',
     },
-  ]).then(answer => {
+  ]).then(internAnswer => {
     // console.log(answer)
     //do something with information about intern 
-    const newIntern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internGithub)
+    const newIntern = new Intern(internAnswer.internName, internAnswer.internId, internAnswer.internEmail, internAnswer.internGithub)
     console.log(newIntern)
     arrOfEmp.push(newIntern);
     console.log(newIntern);
