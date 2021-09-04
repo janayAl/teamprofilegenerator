@@ -72,8 +72,8 @@ const addManager = () => {
     // console.log(newManager.getRole())
     arrOfEmp.push(newManager);
     console.log(newManager);
-    //call the main menu function
-    // menu()
+    call the main menu function
+      menu()
   })
 }
 addManager(); //calls the addmanager function to start the prompts
