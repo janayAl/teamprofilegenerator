@@ -13,7 +13,7 @@ const arrOfEmp = []; //empty array of the teams
 
 //first set of prompts to enter team manager's name, 
 // employee ID, email, office number//
-const menu = () => {
+function menu() {
   inquirer.prompt([
     {
       message: "Please choose an option to build team",
@@ -21,21 +21,26 @@ const menu = () => {
       type: "list",
       choices: ["Engineer", "Intern", "Finish building team"]
     }
-  ]).then(answer) => {  //call the engineer function prompts if chosen
-  switch (answer.addEmployee) {
-    case "Engineer":
-      addEngineer();
-      break;
-    case "Intern":
-      addIntern();
-      break;
-    case "Finish building team":
-      generateHTML();
-      break;
+  ]).then(answer => {  //call the engineer function prompts if chosen
+    switch (answer.addEmployee) {
+      case "Engineer":
+        addEngineer();
+        break;
+      case "Intern":
+        addIntern();
+        break;
+      case "Finish building team":
+        generateHTML();
+        break;
 
-  }
+
+    }
+
+  })
+
 }
-}
+
+
 menu();
 
 const addManager = () => {
