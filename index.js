@@ -22,7 +22,7 @@ function menu() {
       choices: ["Engineer", "Intern", "Finish building team"]
     }
   ]).then(answer => {  //call the engineer function prompts if chosen
-    switch (answer.addEmployee) {
+    switch (answer.choice) {
       case "Engineer":
         addEngineer();
         break;
@@ -54,7 +54,7 @@ function addManager(manager) {
     {
       type: 'input',
       name: 'id',
-      message: 'Enter the id'
+      message: 'Enter the id',
     },
 
     {
@@ -82,7 +82,7 @@ function addManager(manager) {
     menu()
   })
 }
-addManager(); //calls the addmanager function to start the prompts
+// addManager(); //calls the addmanager function to start the prompts
 
 // new menu function with prompts for add engineer, or intern, 
 //or finish building team//
@@ -90,7 +90,7 @@ addManager(); //calls the addmanager function to start the prompts
 // }
 
 //add engineer info
-funcion  addEngineer(engineer) {
+function addEngineer(engineer) {
   return inquirer.prompt([
     {
       type: 'input',
@@ -117,7 +117,7 @@ funcion  addEngineer(engineer) {
   ]).then(engineerAnswer => {
     // console.log(answer)
     //do something with information about manager
-    const newEngineer = new Engineer(EngineerAnswer.engineerName, EngineerAnswer.engineerId, engineerAnswer.engineerEmail, engineerAnswer.engineerGithub)
+    const newEngineer = new Engineer(engineerAnswer.engineerName, engineerAnswer.engineerId, engineerAnswer.engineerEmail, engineerAnswer.engineerGithub)
     console.log(newEngineer)
     arrOfEmp.push(newEngineer);
     console.log(newEngineer);
@@ -127,7 +127,7 @@ funcion  addEngineer(engineer) {
 
 
 //genereate intern function prompts
-function addIntern(intern) {
+function addIntern(internAnswer) {
   inquirer.prompt([
     {
       type: 'input',
@@ -158,7 +158,7 @@ function addIntern(intern) {
   ]).then(internAnswer => {
     // console.log(answer)
     //do something with information about intern 
-    const newIntern = new Intern(internAnswer.internName, internAnswer.internId, internAnswer.internEmail, internAnswer.internGithub)
+    const newIntern = new Intern(internAnswer.internName, internAnswer.internId, internAnswer.internEmail, internAnswer.internGithub, internAnswer.school)
     console.log(newIntern)
     arrOfEmp.push(newIntern);
     console.log(newIntern);
