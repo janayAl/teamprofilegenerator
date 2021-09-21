@@ -45,13 +45,13 @@ function displayEmployee(employee) {
         case "Manager":
             return generateManager(employee);
             break;
-            case "Intern":
-                return generateIntern(empoyee);
-                break;
-                case "Engineer":
-                    return generatEngineer(employee);
-                    break;
-    
+        case "Intern":
+            return generateIntern(empoyee);
+            break;
+        case "Engineer":
+            return generatEngineer(employee);
+            break;
+
     }
 }
 
@@ -62,9 +62,9 @@ function displayEmployee(employee) {
 
 
 
-function generateHTML (arr) {
+function generateHTML(arr) {
 
-     return `<!DOCTYPE html>
+    return `<!DOCTYPE html>
       <html lang="en">
     <head>
     <meta charset="UTF-8">
@@ -85,20 +85,20 @@ function generateHTML (arr) {
           </div>
           </body>
           </html>`;
-          
-        }
 
-       function displayTeam(entireArr) {
-           let arr = []; //creating an empty array for info to pass through
-           entireArr.forEach((employee)=> {
-               let page = displayEmployee(employee); //displayemployee is from switch cases, takes this ino and makes it a variable
-               arr.push(page); //pushes everything from the team into the emptry array 
-           });
+}
 
-           let arrPage = generateHTML(arr);
-           return arrPage;
-       }
-     
-    
+function displayTeam(entireArr) {
+    let arr = []; //creating an empty array for info to pass through
+    entireArr.forEach((employee) => {
+        let page = displayEmployee(employee); //displayemployee is from switch cases, takes this ino and makes it a variable
+        arr.push(page); //pushes everything from the team into the emptry array 
+    });
+
+    let arrPage = generateHTML(arr);
+    return arrPage;
+}
+
+
 //export generateHTML or displayTeam? 
-        module.exports =displayTeam;
+module.exports = displayTeam;
