@@ -7,7 +7,8 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 // generate html 
-const generateHTML = require('./src/generateHTML.js')
+const generateHTML = require('./src/generateHTML.js');
+const displayTeam = require('./src/generateHTML.js');
 
 const arrOfEmp = []; //empty array of the teams
 
@@ -19,7 +20,7 @@ function menu() {
       message: "Please choose an option to build team",
       name: "choice",
       type: "list",
-      choices: ["Engineer", "Intern", "Finish building team"]
+      choices: ["Engineer", "Intern", "Manager", "Finish building team"]
     }
   ]).then(answer => {  //call the engineer function prompts if chosen
     switch (answer.choice) {
@@ -29,9 +30,13 @@ function menu() {
       case "Intern":
         addIntern();
         break;
-      case "Finish building team":
-        generateHTML();
+      case "Manager":
+        addManager();
         break;
+      case "Finish building team":
+        generateHTML(arrOfEmp);
+        break;
+
 
 
     }
@@ -39,7 +44,6 @@ function menu() {
   })
 
 }
-
 
 menu();
 
@@ -82,13 +86,6 @@ function addManager(manager) {
     menu()
   })
 }
-// addManager(); //calls the addmanager function to start the prompts
-
-// new menu function with prompts for add engineer, or intern, 
-//or finish building team//
-// const newMenu() {
-// }
-
 //add engineer info
 function addEngineer(engineer) {
   return inquirer.prompt([
@@ -168,8 +165,7 @@ function addIntern(internAnswer) {
 
 // generateContent() {
 //   const htmlPageContent = generateHTML(answers);
-//   //       run HTML create function
-//   //       using that array
+
 //   fs.writeFileSync('./dist/index.html', generateHTML(arrOfEmp))
 // }
 
@@ -194,10 +190,7 @@ function addIntern(internAnswer) {
 
 
 
-//   });
 
 
 
-
-// create writeFile function using promises instead of a callback function
 

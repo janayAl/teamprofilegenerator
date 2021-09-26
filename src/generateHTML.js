@@ -84,6 +84,7 @@ function generateHTML(arr) {
 
 function displayTeam(entireArr) {
     let arr = []; //creating an empty array for info to pass through
+
     entireArr.forEach((employee) => {
         let page = displayEmployee(employee); //displayemployee is from switch cases, takes this ino and makes it a variable
         arr.push(page); //pushes everything from the team into the emptry array 
