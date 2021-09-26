@@ -77,7 +77,7 @@ function addManager(manager) {
   ]).then(managerAnswer => {
     // console.log(answer)
     //do something with information about manager
-    const newManager = new Manager(managerAnswer.name, managerAnswer.id, managerAnswer.email, managerAnswer.office)
+    const newManager = new Manager(managerAnswer.name, managerAnswer.id, managerAnswer.email, managerAnswer.officeNumber)
     console.log(newManager)
     // console.log(newManager.getRole())
     arrOfEmp.push(newManager);
@@ -188,7 +188,14 @@ function addIntern(internAnswer) {
 // };
 
 
+// const init = () => {
+//   promptUser()
+//     .then((answers) => writeFileAsync('index.html', generateHTML(answers)))
+//     .then(() => console.log('Successfully wrote to index.html'))
+//     .catch((err) => console.error(err));
+// };
 
+// init();
 
 
 
