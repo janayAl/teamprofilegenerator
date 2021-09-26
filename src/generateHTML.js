@@ -56,12 +56,6 @@ function displayEmployee(employee) {
 }
 
 
-
-
-
-
-
-
 function generateHTML(arr) {
 
     return `<!DOCTYPE html>
