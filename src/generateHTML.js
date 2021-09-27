@@ -4,10 +4,10 @@ const fs = require('fs')
 
 function generateManager(manager) {
     return `<div class="card" style="width: 15rem;">
-    <dvi class="card-background">
-    <h5 class="card-title">${manager.name}</h5>
-    <h6 class="card-subtitle">${manager.getRole()}</h6>
-    <p class="card-subtitle">${manager.id}</p>
+    <dvi class="card-body">
+    <h5 class="card-title"> Name: ${manager.name}</h5>
+    <h6 class="card-subtitle"> Role: ${manager.getRole()}</h6>
+    <p class="card-subtitle"> ID: ${manager.id}</p>
     <p class="card-text"> Office Number: ${manager.officeNumber}
     <p class="card-text"> Email: <a href="maileto:${manager.email}">${manager.email}</a></p>
     </div>
@@ -16,10 +16,10 @@ function generateManager(manager) {
 
 function generateIntern(intern) {
     return `<div class="card" style="width: 15rem;">
-    <div class="card-background">
-    <h5 class="card-title">${intern.name}</h5>
-    <h6 class="card-subtitle">${intern.getRole()}</h6>
-    <p class="card-subtitle">${intern.id}</p>
+    <div class="card-body">
+    <h5 class="card-title"> Name: ${intern.name}</h5>
+    <h6 class="card-subtitle"> Role: ${intern.getRole()}</h6>
+    <p class="card-subtitle"> ID: ${intern.id}</p>
     <p class="card-text"> School: ${intern.school}</p>
     <p class="card-text"> Email: <a href="maileto:${intern.email}">${intern.email}</a></p>
     </div>
@@ -28,10 +28,10 @@ function generateIntern(intern) {
 
 function generatEngineer(engineer) {
     return `<div class="card" style="width: 15rem;">
-    <div class="card-background">
-    <h5 class="card-title">${engineer.name}</h5>
-    <h6 class="card-subtitle">${engineer.getRole()}</h6>
-    <p class="card-subtitle">${engineer.id}</p>
+    <div class="card-body">
+    <h5 class="card-title"> Name: ${engineer.name}</h5>
+    <h6 class="card-subtitle"> Role: ${engineer.getRole()}</h6>
+    <p class="card-subtitle"> ID: ${engineer.id}</p>
     <p class="card-text"> Github: <a href="maileto:${engineer.Github}">${engineer.Github}</a></p>
     <p class="card-text"> Email: <a href="maileto:${engineer.email}">${engineer.email}</a></p>
     </div>
@@ -62,12 +62,15 @@ function generateHTML(card) {
     return `<!DOCTYPE html>
       <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">  
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./src/style.css"/> 
     <title>Tean Profile</title>
+ 
     </head>
     <body>
+    <div class="nav-bar" id="navbar"> Teamp Profile </div>
+    
      <div class="jumbotron jumbotron-fluid">
       <div class="container">
                 ${card}

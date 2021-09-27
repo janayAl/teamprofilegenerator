@@ -10,11 +10,16 @@ body {
     background-color:aquamarine;
 }
 
-.navbar-brand{
+.navbar-bar{
     font-size: 50px;
 }
 
-.card-header {
+.card-title {
+    background-color: aquamarine;
+    color: black;
+}
+
+.card-subtitle{
     background-color: aquamarine;
     color: black;
 }
