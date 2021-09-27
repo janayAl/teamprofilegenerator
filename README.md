@@ -1,4 +1,4 @@
-# readme generator
+# TEAMPROFILEGENERATOR
 
 ## Questions
 [Github Profile](http://github.com/janayAl)
@@ -10,7 +10,7 @@ NPM i
 ## Tests
 jests
 ## Contribution
-undefined
+NA
 ## Description
 This project is a generates employee information. Once the user answers the questions prompts, the responses should generate on the html. 
 

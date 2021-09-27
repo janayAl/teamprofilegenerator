@@ -5,8 +5,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
-
 /* navbar styling  */
+#navbar {
+    background-color:aquamarine;
+}
+
+.navbar-brand{
+    font-size: 50px;
+}
 
 .card-header {
     background-color: aquamarine;
