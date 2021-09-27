@@ -11,4 +11,5 @@ describe("Intern", () => {
 
     it("should return Intern as a role", () => {
       const obj = new Intern("Janay", 0, "nunnya@test.com")
-    });
+    })
+  })

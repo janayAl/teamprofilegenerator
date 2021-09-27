@@ -11,4 +11,5 @@ describe("Manager", () => {
 
     it("should return Manager as a role", () => {
       const obj = new Manager("Janay", 0, "nunnya@test.com")
-    });
+    })
+  })
