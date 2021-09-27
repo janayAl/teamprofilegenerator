@@ -1,6 +1,5 @@
 const { TestWatcher } = require("jest");
 const Intern = require("../lib/Intern");
-const Employee = require("../lib/Intern");
 
 describe("Intern", () => {
   describe("Initialization", () => {
