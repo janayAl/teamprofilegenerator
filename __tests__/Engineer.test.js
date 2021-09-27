@@ -1,4 +1,5 @@
 const Employee = require("../lib/Employee");
+const { TestWatcher } = require("jest");
 
 describe("Employee", () => {
   describe("Initialization", () => {
@@ -10,4 +11,4 @@ describe("Employee", () => {
 
     it("should return Employee as a role", () => {
       const obj = new Employee("Janay", 0, "nunnya@test.com")
-});
+    });

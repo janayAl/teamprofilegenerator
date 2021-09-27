@@ -1,4 +1,4 @@
-const Employee = require("../lib/Employee");
+const { TestWatcher } = require("jest");
 const Manager = require("../lib/Manager");
 
 describe("Manager", () => {
@@ -10,5 +10,5 @@ describe("Manager", () => {
     });
 
     it("should return Manager as a role", () => {
-      const obj = new Manager ("Janay", 0, "nunnya@test.com")
-});
+      const obj = new Manager("Janay", 0, "nunnya@test.com")
+    });
